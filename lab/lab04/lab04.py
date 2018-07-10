@@ -1,6 +1,10 @@
 """ Lab 04: Lists and Data Abstraction """
 
-# Q2
+
+
+
+
+# Q3
 def if_this_not_that(i_list, this):
     """Define a function which takes a list of integers `i_list` and an integer
     `this`. For each element in `i_list`, print the element if it is larger
@@ -15,6 +19,18 @@ def if_this_not_that(i_list, this):
     5
     """
     "*** YOUR CODE HERE ***"
+
+    lst = [ i for i in i_list if i > this]
+    lst_not = ['that' for i in i_list if i <= this]
+    all_list = lst_not + lst
+    a = 0
+    while a < this:
+    	print(all_list[a])
+    	a+=1
+    while a < len(all_list):
+    	print(all_list[a])
+    	a+=1
+
 
 # City ADT
 def make_city(name, lat, lon):
@@ -67,6 +83,12 @@ def distance(city1, city2):
     5.0
     """
     "*** YOUR CODE HERE ***"
+    d = sqrt((get_lon(city1)-get_lon(city2))**2 + (get_lat(city1)-get_lat(city2))**2)
+
+    return d
+
+    
+
 
 # Q5
 def closer_city(lat, lon, city1, city2):
@@ -84,13 +106,21 @@ def closer_city(lat, lon, city1, city2):
     'Bucharest'
     """
     "*** YOUR CODE HERE ***"
+    closer_1 = sqrt((lat - get_lat(city1))**2 + (lon - get_lon(city1))**2)
+    closer_2 = sqrt((lat - get_lat(city2))**2 + (lon - get_lon(city2))**2)
+
+    if closer_1 > closer_2:
+    	return city2[0]
+    elif closer_2 > closer_1:
+    	return city1[0]
+
 
 # Q6
 # This is another implementation of the City ADT. Make sure
 # your code works for both the previous and the following versions
 # of the constructor and selectors!
 #
-# make_city = lambda name, lat, lon: [lon, [lat], name]
-# get_name = lambda city: city[2]
-# get_lat = lambda city: city[1][0]
-# get_lon = lambda city: city[0]
+ #make_city = lambda name, lat, lon: [lon, [lat], name]
+ #get_name = lambda city: city[2]
+ #get_lat = lambda city: city[1][0]
+ #get_lon = lambda city: city[0]
