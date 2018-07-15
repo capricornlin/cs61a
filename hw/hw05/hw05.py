@@ -96,6 +96,14 @@ def replace_leaf(t, old, new):
     """
     "*** YOUR CODE HERE ***"
 
+
+
+
+
+
+
+
+
 def print_move(origin, destination):
     """Print instructions to move a disk."""
     print("Move the top disk from rod", origin, "to rod", destination)
@@ -129,6 +137,12 @@ def move_stack(n, start, end):
     """
     assert 1 <= start <= 3 and 1 <= end <= 3 and start != end, "Bad start/end"
     "*** YOUR CODE HERE ***"
+
+    """must use recursion => tree """
+    
+
+
+
 
 ###########
 # Mobiles #
